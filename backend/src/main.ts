@@ -19,7 +19,7 @@ async function bootstrap() {
     logger,
   });
   app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
-  const apiVersionPrefix: string = process.env.API_VERSION || 'api';
+  const apiVersionPrefix: string = 'api';
   app.setGlobalPrefix(apiVersionPrefix);
   app.useGlobalInterceptors(new TransformInterceptor());
   const options = new DocumentBuilder()
